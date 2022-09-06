@@ -71,7 +71,7 @@ export default function Home() {
       controls.autoRotate = true;
       controls.target = target;
 
-      loadGLTFModel(scene, "/Dibesfer_PC.glb", {
+      loadGLTFModel(scene, "/dog.glb", {
         receiveShadow: false,
         castShadow: false,
       }).then(() => {
