@@ -1,11 +1,8 @@
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { loadGLTFModel } from "../lib/model";
 import { useEffect, useState, useRef, useCallback } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
 import { DogSpinner, DogContainer } from "../components/voxel-dog-loader";
 
 function easeOutCirc(x) {
