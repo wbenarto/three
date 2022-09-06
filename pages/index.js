@@ -2,47 +2,127 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import * as THREE from "three";
-import { useEffect } from "react";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { loadGLTFModel } from "../lib/model";
+import { useEffect, useState, useRef, useCallback } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { DogSpinner, DogContainer } from "../components/voxel-dog-loader";
+
+function easeOutCirc(x) {
+  return Math.sqrt(1 - Math.pow(x - 1, 4));
+}
 
 export default function Home() {
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(
-    75,
-    window.innerWidth / window.innerHeight,
-    0.1,
-    1000
-  );
+  const refContainer = useRef();
+  const [loading, setLoading] = useState(true);
+  const refRenderer = useRef();
 
-  const renderer = new THREE.WebGLRenderer({
-    canvas: document.querySelector("#bg"),
-  });
+  const handleWindowResize = useCallback(() => {
+    const { current: renderer } = refRenderer;
+    const { current: container } = refContainer;
+    if (container && renderer) {
+      const scW = container.clientWidth;
+      const scH = container.clientHeight;
 
-  renderer.setPixelRatio(window.devicePixelRatio);
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  camera.position.setZ(110);
-  renderer.render(scene, camera);
+      renderer.setSize(scW, scH);
+    }
+  }, []);
 
-  const geometry = new THREE.TorusGeometry(15, 32, 16);
-  const material = new THREE.MeshBasicMaterial({
-    color: 0xff6347,
-    wireframe: true,
-  });
-  const torus = new THREE.Mesh(geometry, material);
-  scene.add(torus);
+  /* eslint-disable react-hooks/exhaustive-deps */
+  useEffect(() => {
+    const { current: container } = refContainer;
+    if (container) {
+      const scW = container.clientWidth;
+      const scH = container.clientHeight;
 
-  const animate = () => {
-    requestAnimationFrame(animate);
+      const renderer = new THREE.WebGLRenderer({
+        antialias: true,
+        alpha: true,
+      });
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setSize(scW, scH);
+      renderer.outputEncoding = THREE.sRGBEncoding;
+      container.appendChild(renderer.domElement);
+      refRenderer.current = renderer;
+      const scene = new THREE.Scene();
 
-    torus.rotation.x += 0.001;
-    torus.rotation.y += 0.005;
-    torus.rotation.z += 0.001;
-    renderer.render(scene, camera);
-  };
+      const target = new THREE.Vector3(-0.5, 1.2, 0);
+      const initialCameraPosition = new THREE.Vector3(
+        20 * Math.sin(0.2 * Math.PI),
+        10,
+        20 * Math.cos(0.2 * Math.PI)
+      );
 
-  animate();
+      // 640 -> 240
+      // 8   -> 6
+      const scale = scH * 0.005 + 4.8;
+      const camera = new THREE.OrthographicCamera(
+        -scale,
+        scale,
+        scale,
+        -scale,
+        0.01,
+        50000
+      );
+      camera.position.copy(initialCameraPosition);
+      camera.lookAt(target);
+
+      const ambientLight = new THREE.AmbientLight(0xcccccc, 1);
+      scene.add(ambientLight);
+
+      const controls = new OrbitControls(camera, renderer.domElement);
+      controls.autoRotate = true;
+      controls.target = target;
+
+      loadGLTFModel(scene, "/Dibesfer_PC.glb", {
+        receiveShadow: false,
+        castShadow: false,
+      }).then(() => {
+        animate();
+        setLoading(false);
+      });
+
+      let req = null;
+      let frame = 0;
+      const animate = () => {
+        req = requestAnimationFrame(animate);
+
+        frame = frame <= 100 ? frame + 1 : frame;
+
+        if (frame <= 100) {
+          const p = initialCameraPosition;
+          const rotSpeed = -easeOutCirc(frame / 120) * Math.PI * 20;
+
+          camera.position.y = 10;
+          camera.position.x =
+            p.x * Math.cos(rotSpeed) + p.z * Math.sin(rotSpeed);
+          camera.position.z =
+            p.z * Math.cos(rotSpeed) - p.x * Math.sin(rotSpeed);
+          camera.lookAt(target);
+        } else {
+          controls.update();
+        }
+
+        renderer.render(scene, camera);
+      };
+
+      return () => {
+        cancelAnimationFrame(req);
+        renderer.domElement.remove();
+        renderer.dispose();
+      };
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowResize, false);
+    return () => {
+      window.removeEventListener("resize", handleWindowResize, false);
+    };
+  }, [handleWindowResize]);
 
   return (
-    <div className={styles.container}>
+    <div className="">
       <Head>
         <title></title>
         <meta name="description" content="Welcome" />
@@ -50,9 +130,10 @@ export default function Home() {
       </Head>
 
       <main>
-        <div className="w-full h-full">
-          <canvas id="bg" className="w-full h-full fixed "></canvas>
-          HJello
+        <div className="w-full h-screen bg-blue-200" id="canvas-container">
+          <DogContainer ref={refContainer}>
+            {loading && <DogSpinner />}
+          </DogContainer>
         </div>
       </main>
 
