@@ -2,7 +2,7 @@ import Head from "next/head";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { loadGLTFModel } from "../lib/model";
-import { useEffect, useState, useRef, useCallback } from "react";
+import { useEffect, useRef, useCallback } from "react";
 // import { DogSpinner, DogContainer } from "../components/voxel-dog-loader";
 import Circle from "../components/Circle";
 import Landing from "../components/Landing";
