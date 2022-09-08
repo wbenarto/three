@@ -25,7 +25,7 @@ export default function Home() {
   }, []);
 
   const refContainer = useRef();
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
   const refRenderer = useRef();
 
   const handleWindowResize = useCallback(() => {
