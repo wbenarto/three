@@ -9,7 +9,6 @@ import Landing from "../components/Landing";
 import About from "../components/About";
 import Work from "../components/Work";
 import Contact from "../components/Contact";
-import gsap from "gsap";
 
 function easeOutCirc(x) {
   return Math.sqrt(1 - Math.pow(x - 1, 4));

@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { animateScroll as scroll } from "react-scroll";
 import { Link } from "react-scroll";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 const Landing = () => {
   return (
     <div className="w-screen  relative h-full p-10 font-roboto font-bold text-6xl sm:my-auto grid sm:text-7xl sm:p-4 md:text-7xl md:px-20 ">
