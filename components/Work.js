@@ -1,8 +1,8 @@
 import React from "react";
-import gsap from "gsap";
+// import gsap from "gsap";
 // import { ScrollTrigger, DrawSVGPlugin, MotionPathPlugin } from "gsap/all";
 import useLayoutEffect from "../lib/use-isomorphic-layout-effect";
-
+//
 const Work = () => {
   // useLayoutEffect(() => {}, []);
 

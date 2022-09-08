@@ -1,7 +1,7 @@
 import React, { useRef, forwardRef, useImperativeHandle } from "react";
 import gsap from "gsap";
 
-const Circle = forwardRef(({ size, delay }, ref) => {
+const Circle = forwardRef(({ delay }, ref) => {
   const el = useRef();
   useImperativeHandle(
     ref,
