@@ -4,12 +4,27 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { loadGLTFModel } from "../lib/model";
 import { useEffect, useState, useRef, useCallback } from "react";
 import { DogSpinner, DogContainer } from "../components/voxel-dog-loader";
+import Circle from "../components/Circle";
+import Landing from "../components/Landing";
+import About from "../components/About";
+import Work from "../components/Work";
+import Contact from "../components/Contact";
+import gsap from "gsap";
 
 function easeOutCirc(x) {
   return Math.sqrt(1 - Math.pow(x - 1, 4));
 }
 
 export default function Home() {
+  useEffect(() => {
+    const element = document.querySelector("#main");
+    element.addEventListener("wheel", (e) => {
+      e.preventDefault();
+
+      element.scrollLeft += e.deltaY;
+    });
+  }, []);
+
   const refContainer = useRef();
   const [loading, setLoading] = useState(true);
   const refRenderer = useRef();
@@ -118,6 +133,28 @@ export default function Home() {
     };
   }, [handleWindowResize]);
 
+  const circleRefs = useRef([]);
+  circleRefs.current = [];
+
+  useEffect(() => {
+    circleRefs.current.forEach((ref) =>
+      ref.moveTo(window.innerWidth / 2, window.innerHeight / 2)
+    );
+
+    const onMove = ({ clientX, clientY }) => {
+      circleRefs.current.forEach((ref) => ref.moveTo(clientX, clientY));
+    };
+    window.addEventListener("pointermove", onMove);
+
+    return () => window.removeEventListener("pointermove", onMove);
+  }, []);
+
+  const addCircleRef = (ref) => {
+    if (ref) {
+      circleRefs.current.push(ref);
+    }
+  };
+
   return (
     <div className="">
       <Head>
@@ -127,10 +164,35 @@ export default function Home() {
       </Head>
 
       <main>
-        <div className="w-full h-screen bg-blue-200" id="canvas-container">
-          <DogContainer ref={refContainer}>
-            {loading && <DogSpinner />}
-          </DogContainer>
+        <div
+          id="main"
+          className="flex overflow-x-scroll h-screen  text-white bg-black"
+        >
+          {/* <div className="w-full max-h-screen relative bg-blue-200 ">
+            <h1>HELLO</h1>
+            <DogContainer className="w-40 h-40 " ref={refContainer}>
+              {loading && <DogSpinner />}
+            </DogContainer>
+          </div> */}
+
+          <div className="w-screen max-h-screen relative ">
+            {/* <div className='absolute bottom-0 right-0 mt-[-100px] mr-[-390px] w-full h-full z-0 bg-center bg-cover bg-[url("/webe.png")]'></div> */}
+
+            <Landing />
+
+            <Circle size={12} ref={addCircleRef} delay={0} />
+            <Circle size={8} ref={addCircleRef} delay={0.1} />
+            <Circle size={4} ref={addCircleRef} delay={0.2} />
+          </div>
+          <div className="w-screen max-h-screen relative  ">
+            <About />
+          </div>
+          <div className="w-screen max-h-screen relative  ">
+            <Work />
+          </div>
+          <div className="w-screen max-h-screen relative  ">
+            <Contact />
+          </div>
         </div>
       </main>
 
