@@ -73,6 +73,10 @@ const Landing = () => {
             <FaLinkedin />
           </a>
         </div>
+
+        <div className="absolute md:hidden text-xs animate-bounce  w-full text-center bottom-[-80px]">
+          <p>Tap anywhere</p>
+        </div>
       </div>
     </div>
   );
