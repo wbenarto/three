@@ -9,22 +9,6 @@ const Landing = () => {
       id="landing"
       className="w-screen relative h-full  font-roboto font-bold p-4 md:p-10 text-5xl sm:my-auto grid sm:text-7xl  md:text-7xl  "
     >
-      {/* <div className="fixed text-sm flex  items-center justify-center z-999 my-auto mb-[50px] bottom-0 left-0 w-full h-10 ">
-        <Link to="about" smooth={true} duration={800} spy={true} exact="true">
-          <div
-            className="w-20 h-10 bg-blue-400"
-            onClick={() => console.log("about")}
-          >
-            About
-          </div>
-        </Link>
-        <Link to="work" smooth={true} duration={800} spy={true} exact="true">
-          <div className="w-20 h-10 bg-blue-400">Work</div>
-        </Link>
-        <Link to="contact" smooth={true} duration={800} spy={true} exact="true">
-          <div className="w-20 h-10 bg-blue-400">Contact</div>
-        </Link>
-      </div> */}
       <div
         id="landing"
         className="my-auto relative mx-auto leading-tight  w-full lg:w-[1000px] "

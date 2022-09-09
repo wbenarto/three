@@ -1,23 +1,10 @@
 import Head from "next/head";
-import { useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import Circle from "../components/Circle";
 import Landing from "../components/Landing";
-import About from "../components/About";
-import Work from "../components/Work";
-import Contact from "../components/Contact";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default function Home() {
-  // Horizontal Scrolling
-  useEffect(() => {
-    const element = document.querySelector("#main");
-    element.addEventListener("wheel", (e) => {
-      e.preventDefault();
-      element.scrollLeft += e.deltaY;
-    });
-  }, []);
-
+  const [wh, setWh] = useState(100);
   // Mouse tracking element
   const circleRefs = useRef([]);
   circleRefs.current = [];
@@ -41,26 +28,9 @@ export default function Home() {
     }
   };
 
-  // Gsap Animation
-  // gsap.registerPlugin(ScrollTrigger);
-  // const ref = useRef(null);
-
-  // gsap.defaults({ ease: "easeIn", duration: 2 });
-  // useEffect(() => {
-  //   gsap.fromTo(
-  //     "#landing",
-  //     {
-  //       opacity: 0,
-  //       y: -100,
-  //     },
-  //     {
-  //       ease: "power2.easeIn",
-  //       y: 0,
-  //       opacity: 1,
-  //       duration: 3,
-  //     }
-  //   );
-  // }, []);
+  useEffect(() => {
+    setWh(window.innerHeight * 0.01);
+  }, []);
 
   return (
     <div className="">
@@ -71,9 +41,11 @@ export default function Home() {
       </Head>
 
       <main>
-        <div id="main" className="h-screen w-full flex text-white bg-black">
-          {/* <div className='absolute bottom-0 right-0 mt-[-100px] mr-[-390px] w-full h-full z-0 bg-center bg-cover bg-[url("/webe.png")]'></div> */}
-
+        <div
+          id="main"
+          className="h-screen w-full flex text-white bg-black"
+          // className={`h-[calc(${wh} * 100)] sm:h-screen w-full flex text-white bg-black`}
+        >
           <Landing id="landing" />
 
           <Circle size={12} ref={addCircleRef} delay={0} />
