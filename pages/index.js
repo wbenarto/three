@@ -42,25 +42,25 @@ export default function Home() {
   };
 
   // Gsap Animation
-  gsap.registerPlugin(ScrollTrigger);
-  const ref = useRef(null);
+  // gsap.registerPlugin(ScrollTrigger);
+  // const ref = useRef(null);
 
-  gsap.defaults({ ease: "easeIn", duration: 2 });
-  useEffect(() => {
-    gsap.fromTo(
-      "#landing",
-      {
-        opacity: 0,
-        y: -100,
-      },
-      {
-        ease: "power2.easeIn",
-        y: 0,
-        opacity: 1,
-        duration: 3,
-      }
-    );
-  }, []);
+  // gsap.defaults({ ease: "easeIn", duration: 2 });
+  // useEffect(() => {
+  //   gsap.fromTo(
+  //     "#landing",
+  //     {
+  //       opacity: 0,
+  //       y: -100,
+  //     },
+  //     {
+  //       ease: "power2.easeIn",
+  //       y: 0,
+  //       opacity: 1,
+  //       duration: 3,
+  //     }
+  //   );
+  // }, []);
 
   return (
     <div className="">
@@ -71,28 +71,14 @@ export default function Home() {
       </Head>
 
       <main>
-        <div
-          id="main"
-          className="snap-x snap-mandatory flex overflow-x-scroll h-screen  text-white bg-black"
-        >
-          <div className="w-screen snap-center max-h-screen relative ">
-            {/* <div className='absolute bottom-0 right-0 mt-[-100px] mr-[-390px] w-full h-full z-0 bg-center bg-cover bg-[url("/webe.png")]'></div> */}
+        <div id="main" className="h-screen w-full flex text-white bg-black">
+          {/* <div className='absolute bottom-0 right-0 mt-[-100px] mr-[-390px] w-full h-full z-0 bg-center bg-cover bg-[url("/webe.png")]'></div> */}
 
-            <Landing id="landing" />
+          <Landing id="landing" />
 
-            <Circle size={12} ref={addCircleRef} delay={0} />
-            <Circle size={8} ref={addCircleRef} delay={0.1} />
-            <Circle size={4} ref={addCircleRef} delay={0.2} />
-          </div>
-          <div className="w-screen snap-center max-h-screen relative  ">
-            <About />
-          </div>
-          <div className="w-screen snap-center max-h-screen relative  ">
-            <Work />
-          </div>
-          <div className="w-screen snap-center max-h-screen relative  ">
-            <Contact />
-          </div>
+          <Circle size={12} ref={addCircleRef} delay={0} />
+          <Circle size={8} ref={addCircleRef} delay={0.1} />
+          <Circle size={4} ref={addCircleRef} delay={0.2} />
         </div>
       </main>
 
