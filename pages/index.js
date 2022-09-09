@@ -43,7 +43,7 @@ export default function Home() {
       <main>
         <div
           id="main"
-          className="h-screen w-full flex text-white bg-black"
+          className="h-[-webkit-fill-available] sm:h-screen w-full flex text-white bg-black"
           // className={`h-[calc(${wh} * 100)] sm:h-screen w-full flex text-white bg-black`}
         >
           <Landing id="landing" />
