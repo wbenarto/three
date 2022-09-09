@@ -59,7 +59,7 @@ const Landing = () => {
         </div>
 
         <div className="absolute md:hidden text-xs animate-bounce  w-full text-center bottom-[-180px]">
-          <p>Tap anywhere</p>
+          <p>Tap here</p>
         </div>
       </div>
     </div>

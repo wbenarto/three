@@ -47,11 +47,10 @@ export default function Home() {
           className={`h-[-webkit-fill-available] sm:h-screen w-full flex text-white bg-black items-center`}
         >
           <Landing id="landing" />
-
-          <Circle size={12} ref={addCircleRef} delay={0} />
-          <Circle size={8} ref={addCircleRef} delay={0.1} />
-          <Circle size={4} ref={addCircleRef} delay={0.2} />
         </div>
+        <Circle size={12} ref={addCircleRef} delay={0} />
+        <Circle size={8} ref={addCircleRef} delay={0.1} />
+        <Circle size={4} ref={addCircleRef} delay={0.2} />
       </main>
 
       <footer></footer>

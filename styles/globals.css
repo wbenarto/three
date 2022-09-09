@@ -12,6 +12,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif, Lexend;
   height: 100vh;
   height: -webkit-fill-available;
+  background-color: black;
 }
 
 
