@@ -49,7 +49,7 @@ const Landing = () => {
           ></a>
         </div>
 
-        <div className="absolute h-20 w-auto text-xl right-0 grid  sm:h-32 md:h-40  top-[45%] sm:top-[40%] items-center mr-4 sm:text-2xl   ">
+        <div className="absolute h-24 w-auto text-2xl right-0 grid  sm:h-32 md:h-40  top-[45%] sm:top-[40%] items-center mr-4 sm:text-2xl   ">
           <a href="https://github.com/wbenarto">
             <FaGithub />
           </a>
@@ -58,7 +58,7 @@ const Landing = () => {
           </a>
         </div>
 
-        <div className="absolute md:hidden text-xs animate-bounce  w-full text-center bottom-[-80px]">
+        <div className="absolute md:hidden text-xs animate-bounce  w-full text-center bottom-[-180px]">
           <p>Tap anywhere</p>
         </div>
       </div>

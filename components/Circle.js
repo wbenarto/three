@@ -17,7 +17,7 @@ const Circle = forwardRef(({ delay }, ref) => {
   );
   return (
     <div
-      className={`fixed translate w-10 h-10 rounded-full top-0 left-0 translate-x-[-50%] translate-y-[-50%] pointer-events-none backdrop-invert z-0`}
+      className={`w-[14rem] h-[14rem] fixed translate sm:w-10 sm:h-10 rounded-full top-0 left-0 translate-x-[-50%] translate-y-[-50%] pointer-events-none backdrop-invert z-0`}
       ref={el}
     ></div>
   );
