@@ -47,18 +47,19 @@ export default function Home() {
 
   gsap.defaults({ ease: "easeIn", duration: 2 });
   useEffect(() => {
-    const element = ref.current;
-    gsap.to("#landing", {
-      scrollTrigger: {
-        trigger: "#landing",
-        toggleActions: "restart none none none",
-        start: "left center",
-        markers: true,
-        horizontal: true,
+    gsap.fromTo(
+      "#landing",
+      {
+        opacity: 0,
+        y: -100,
       },
-      duration: 3,
-      rotation: 360,
-    });
+      {
+        ease: "power2.easeIn",
+        y: 0,
+        opacity: 1,
+        duration: 3,
+      }
+    );
   }, []);
 
   return (
@@ -72,7 +73,7 @@ export default function Home() {
       <main>
         <div
           id="main"
-          className="snap-x flex overflow-x-scroll h-screen scroll-smooth text-white bg-black"
+          className="snap-x snap-mandatory flex overflow-x-scroll h-screen  text-white bg-black"
         >
           <div className="w-screen snap-center max-h-screen relative ">
             {/* <div className='absolute bottom-0 right-0 mt-[-100px] mr-[-390px] w-full h-full z-0 bg-center bg-cover bg-[url("/webe.png")]'></div> */}
