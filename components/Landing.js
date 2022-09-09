@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-// import { animateScroll as scroll } from "react-scroll";
-// import { Link } from "react-scroll";
-// import gsap from "gsap";
 
 const Landing = () => {
   return (
-    <div className="w-screen relative h-full  font-roboto font-bold p-4 text-5xl sm:my-auto grid sm:text-7xl  md:text-7xl  ">
+    <div
+      id="landing"
+      className="w-screen relative h-full  font-roboto font-bold p-4 text-5xl sm:my-auto grid sm:text-7xl  md:text-7xl  "
+    >
       {/* <div className="fixed text-sm flex  items-center justify-center z-999 my-auto mb-[50px] bottom-0 left-0 w-full h-10 ">
         <Link to="about" smooth={true} duration={800} spy={true} exact="true">
           <div
@@ -23,7 +23,10 @@ const Landing = () => {
           <div className="w-20 h-10 bg-blue-400">Contact</div>
         </Link>
       </div> */}
-      <div className="my-auto mx-auto relative  leading-none  w-full lg:w-[1200px] ">
+      <div
+        id="landing"
+        className="my-auto mx-auto relative  leading-none  w-full lg:w-[1200px] "
+      >
         <h1 className="hover:pl-20  transition-all  ">Hello.</h1>
         <h1 className=" hover:pl-20  transition-all  ">I am</h1>
         <h1 className=" hover:pl-20 text-[#13a8bf]  transition-all ">
