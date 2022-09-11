@@ -6,7 +6,7 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  distDir: "build",
+  // distDir: "build",
 };
 
 module.exports = nextConfig;
