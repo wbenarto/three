@@ -1,19 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { gsap } from "gsap";
 
 const Landing = () => {
   const [menu, setMenu] = useState(false);
+
+  const boxRef = useRef();
+
+  // wait until DOM has been rendered
+  // useEffect(() => {
+  //   gsap.to(boxRef.current, { rotation: "+=360" });
+  // });
+
+  useEffect(() => {
+    let t1 = gsap.timeline();
+    t1.fromTo(
+      ".landing",
+      { opacity: 0, y: 60 },
+      { opacity: 1, y: 0, duration: 1, stagger: 0.2, ease: "ease-in" }
+    ).fromTo(
+      ".side",
+      { opacity: 0, x: 20 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.4,
+        stagger: 0.2,
+      }
+    );
+  }, []);
   return (
     <div
       onClick={() => setMenu(!menu)}
-      id="landing"
       className="w-screen relative h-full  font-roboto font-bold p-4 md:p-10 text-5xl sm:my-auto grid sm:text-7xl  md:text-7xl  "
     >
-      <div
-        id="landing"
-        className="my-auto relative mx-auto leading-tight  w-full lg:w-[1000px] "
-      >
-        <div>
+      <div className="my-auto relative mx-auto leading-tight  w-full lg:w-[1000px] ">
+        <div className="landing">
           <a
             href="/about"
             className={
@@ -24,7 +46,7 @@ const Landing = () => {
             data-hover="About"
           ></a>
         </div>
-        <div>
+        <div className="landing">
           {" "}
           <a
             href="/work"
@@ -37,7 +59,7 @@ const Landing = () => {
             data-hover="About"
           ></a>
         </div>
-        <div>
+        <div className="landing">
           <a
             href="/contact"
             className={
@@ -51,10 +73,10 @@ const Landing = () => {
 
         <div className="absolute h-24 w-auto text-2xl right-0 grid  sm:h-32 md:h-40  top-[45%] sm:top-[40%] items-center mr-4 sm:text-2xl   ">
           <a href="https://github.com/wbenarto">
-            <FaGithub />
+            <FaGithub className="side" />
           </a>
           <a href="https://www.linkedin.com/in/william-benarto/">
-            <FaLinkedin />
+            <FaLinkedin className="side" />
           </a>
         </div>
 

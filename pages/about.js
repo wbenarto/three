@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { gsap } from "gsap";
 
 const about = () => {
+  useEffect(() => {
+    let t1 = gsap.timeline();
+    t1.fromTo(
+      ".landing",
+      { opacity: 0, y: 60 },
+      { opacity: 1, y: 0, duration: 1, stagger: 0.2, ease: "ease-in" }
+    );
+  }, []);
+
   return (
     <div className="h-full w-screen text-white bg-black font-roboto max-w-[1200px] mx-auto  ">
       <div className="absolute top-0 right-0 mr-10 mt-10 sm:mr-20 md:mr-24 text-2xl hover:cursor-pointer">
@@ -10,7 +20,7 @@ const about = () => {
         ></a>
       </div>
       <div className="h-screen text-center grid items-center ">
-        <h1 className="text-2xl md:text-4xl font-bold p-4 ">
+        <h1 className="text-2xl md:text-4xl font-bold p-4 landing ">
           I design and build Front-End web applications using modern JavaScript
           frameworks
         </h1>

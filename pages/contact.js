@@ -20,7 +20,7 @@ const contact = () => {
       </div>
       <div className=" text-base mt-[-200px] sm:text-xl px-10 md:px-20 pb-40 sm:max-w-[800px] text-left mx-auto ">
         <h1 className="text-2xl md:text-2xl font-bold my-10 ">Contact </h1>
-        <p className="text-gray-400 ">
+        <p className="text-gray-400">
           Currently looking for a full-time opportunity where I can collaborate
           with creative group of people to develop solutions and bring positive
           impact to the world.{" "}
