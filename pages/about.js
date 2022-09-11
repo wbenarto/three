@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const about = () => {
   useEffect(() => {
@@ -8,6 +10,58 @@ const about = () => {
       ".landing",
       { opacity: 0, y: 60 },
       { opacity: 1, y: 0, duration: 1, stagger: 0.2, ease: "ease-in" }
+    );
+    gsap.from(
+      "#img",
+      {
+        duration: 1,
+        opacity: 0,
+        y: 60,
+        ease: "power3",
+        scrollTrigger: {
+          id: "img",
+          trigger: "#img",
+          start: "top 40%",
+          end: "bottom 80%",
+          toggleActions: "play none none reverse",
+        },
+      },
+      "Start"
+    );
+    gsap.from(
+      "#about",
+      {
+        duration: 1,
+        opacity: 0,
+        y: 60,
+        ease: "power3",
+        scrollTrigger: {
+          id: "about",
+          trigger: "#about",
+          start: "top 40%",
+          end: "bottom 80%",
+          toggleActions: "play none none reverse",
+        },
+      },
+      "Start"
+    );
+    gsap.from(
+      ".skills",
+      {
+        duration: 1,
+        opacity: 0,
+        y: 60,
+        ease: "power3",
+        scrollTrigger: {
+          id: "skills",
+          trigger: "#about",
+          start: "top 30%",
+          end: "bottom 80%",
+          toggleActions: "play none none reverse",
+          stagger: 0.3,
+        },
+      },
+      "Start"
     );
   }, []);
 
@@ -27,12 +81,16 @@ const about = () => {
       </div>
       <div className="">
         <img
+          id="img"
           className=" object-cover mx-auto"
           src={"/IMG_6061.jpg"}
           alt="profile"
         />
       </div>
-      <div className=" text-xl px-10 md:px-20 pb-40 sm:max-w-[800px] text-left mx-auto ">
+      <div
+        id="about"
+        className=" text-xl px-10 md:px-20 pb-40 sm:max-w-[800px] text-left mx-auto "
+      >
         <h1 className="my-10 text-2xl md:text-4xl font-bold ">About </h1>
         <p className="text-xl text-gray-400 ">
           I am a programmer / full-stack developer / front-end engineer . I
@@ -51,7 +109,7 @@ const about = () => {
 
         <h2 className="text-2xl md:text-4xl my-10 font-bold">Skills</h2>
         <div className="text-base">
-          <div className="w-full grid grid-cols-6 py-2  gap-4">
+          <div className="w-full grid grid-cols-6 py-2  gap-4 skills">
             <div className="col-span-2 text-gray-400">
               <p>Programming Language:</p>
             </div>
@@ -59,7 +117,7 @@ const about = () => {
               <p>HTML, CSS, JavaScript(ES6), TypeScript, Python</p>
             </div>
           </div>
-          <div className=" w-full grid grid-cols-6 py-2  gap-4">
+          <div className=" w-full grid grid-cols-6 py-2  gap-4  skills">
             <div className="col-span-2 text-gray-400 ">
               <p>Frameworks:</p>
             </div>
@@ -67,7 +125,7 @@ const about = () => {
               <p>Next.js, React.js, Node.js, Express</p>
             </div>
           </div>
-          <div className="w-full grid grid-cols-6 py-2  gap-4">
+          <div className="w-full grid grid-cols-6 py-2  gap-4  skills">
             <div className="col-span-2 text-gray-400 ">
               <p>Libraries:</p>
             </div>
@@ -75,7 +133,7 @@ const about = () => {
               <p>Redux, Recoil, REST API, GraphQL, ApolloClient</p>
             </div>
           </div>
-          <div className=" w-full grid grid-cols-6 py-2  gap-4">
+          <div className=" w-full grid grid-cols-6 py-2  gap-4  skills">
             <div className="col-span-2 text-gray-400 ">
               <p>Databases:</p>
             </div>
@@ -83,7 +141,7 @@ const about = () => {
               <p>MongoDB, MySQL, Google Cloud Firebase, Sanity.io</p>
             </div>
           </div>
-          <div className=" w-full grid grid-cols-6 py-2  gap-4">
+          <div className=" w-full grid grid-cols-6 py-2  gap-4  skills">
             <div className="col-span-2 text-gray-400 ">
               <p>Other Tools:</p>
             </div>
@@ -95,10 +153,10 @@ const about = () => {
             </div>
           </div>
         </div>
-        <h2 className="text-2xl md:text-4xl my-10 font-bold">
+        <h2 className="text-2xl md:text-4xl my-10 font-bold skills">
           Hobbies and Interests
         </h2>
-        <p className=" text-gray-400 ">
+        <p className=" text-gray-400 skills ">
           In my free time I like to work out, play basketball and cook up
           delicious dishes from all around the world. My experience working in
           Food and Beverage industry gave me the skills to explore different
@@ -106,7 +164,7 @@ const about = () => {
           share my sushi creation to friends and family.
         </p>
         <br />
-        <p className=" text-gray-400 ">
+        <p className=" text-gray-400 skills ">
           I also share my passion in programming with my 12 year old niece. I
           started tutoring her simple programming during the pandemic and got
           her into writing games and animation through Scratch. She has improved
