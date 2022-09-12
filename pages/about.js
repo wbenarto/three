@@ -74,7 +74,7 @@ const about = () => {
         ></a>
       </div>
       <div className="h-screen text-center grid items-center ">
-        <h1 className="text-2xl md:text-4xl font-bold p-4 landing ">
+        <h1 className="text-2xl md:text-4xl font-bold p-4 sm:p-14 landing">
           I design and build Front-End web applications using modern JavaScript
           frameworks
         </h1>
@@ -94,8 +94,9 @@ const about = () => {
         <h1 className="my-10 text-2xl md:text-4xl font-bold ">About </h1>
         <p className="text-xl text-gray-400 ">
           I am a programmer / full-stack developer / front-end engineer . I
-          enjoy building things that live on the internet and aspire to help &
-          create positive impact for other people and the world through my code.
+          enjoy building things that live on the internet and aspire to help and
+          create positive impact for other people and for the world through my
+          code.
         </p>
         <div className="hover:animate-bounce my-10">
           {" "}
@@ -161,7 +162,7 @@ const about = () => {
           delicious dishes from all around the world. My experience working in
           Food and Beverage industry gave me the skills to explore different
           recipes from different cultures. One of my biggest joy in life is to
-          share my sushi creation to friends and family.
+          share my sushi creations to friends and family.
         </p>
         <br />
         <p className=" text-gray-400 skills ">
