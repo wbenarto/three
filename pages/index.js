@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <div className="">
       <Head>
-        <title></title>
+        <title>William Benarto</title>
         <meta name="description" content="Welcome" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -48,9 +48,9 @@ export default function Home() {
         >
           <Landing id="landing" />
         </div>
-        <Circle size={12} ref={addCircleRef} delay={0} />
+        {/* <Circle size={12} ref={addCircleRef} delay={0} />
         <Circle size={8} ref={addCircleRef} delay={0.1} />
-        <Circle size={4} ref={addCircleRef} delay={0.2} />
+        <Circle size={4} ref={addCircleRef} delay={0.2} /> */}
       </main>
 
       <footer></footer>

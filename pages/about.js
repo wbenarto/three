@@ -123,7 +123,7 @@ const about = () => {
               <p>Frameworks:</p>
             </div>
             <div className="col-span-4">
-              <p>Next.js, React.js, Node.js, Express</p>
+              <p>Next.js, React.js</p>
             </div>
           </div>
           <div className="w-full grid grid-cols-6 py-2  gap-4  skills">
@@ -131,7 +131,11 @@ const about = () => {
               <p>Libraries:</p>
             </div>
             <div className="col-span-4">
-              <p>Redux, Recoil, REST API, GraphQL, ApolloClient</p>
+              <p>
+                {" "}
+                Node.js, Express, Redux, Recoil, REST API, GraphQL API,
+                ApolloClient
+              </p>
             </div>
           </div>
           <div className=" w-full grid grid-cols-6 py-2  gap-4  skills">
