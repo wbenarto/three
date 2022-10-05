@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Head from "next/head";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -12,6 +13,11 @@ const NoSsr = dynamic(() => import("../components/About"), {
 const About = () => {
   return (
     <React.Fragment>
+      <Head>
+        <title>William Benarto</title>
+        <meta name="description" content="Welcome" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <NoSsr />
     </React.Fragment>
   );

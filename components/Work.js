@@ -23,6 +23,13 @@ const Work = () => {
       ease: "power2",
       stagger: 0.3,
     });
+    gsap.from(".title", {
+      y: 100,
+      opacity: 0,
+      duration: 0.5,
+      ease: "power2",
+      stagger: 1.8,
+    });
   }, []);
   return (
     <div className="h-full  text-white bg-black font-roboto max-w-[1200px] mx-auto  ">
@@ -33,7 +40,7 @@ const Work = () => {
         ></a>
       </div>
       <div className=" text-base sm:text-xl px-10 md:px-20 pb-40 sm:max-w-[800px] text-left mx-auto ">
-        <h1 className="my-10 text-2xl md:text-4xl font-bold ">Work </h1>
+        <h1 className="my-10 text-2xl md:text-4xl font-bold title">Work </h1>
         <div className=" w-full grid grid-cols-8 py-2  gap-4 job">
           <div className="col-span-3 text-gray-400 ">
             <p>July 2022 - Now</p>
@@ -140,6 +147,10 @@ const Work = () => {
             <p className="text-gray-400">Homemakase</p>
           </div>
         </div>
+
+        <h1 className="my-10 text-2xl md:text-4xl font-bold title">
+          Previous Work{" "}
+        </h1>
         <div className=" w-full grid grid-cols-8 py-2  gap-4 job">
           <div className="col-span-3 text-gray-400 ">
             <p>2017 - 2020</p>
@@ -212,18 +223,20 @@ const Work = () => {
             <></>
           )}
 
-          {project?.images ? (
-            <div className="flex py-2 sm:py-4 h-[16rem] sm:h-[24rem] w-full items-center oveflow-x-scroll">
-              <div className="rounded-xl bg-gray-600 w-[90%] sm:w-3/4 p-4 sm:p-10 h-full ">
-                <img
-                  className="w-full h-full object-cover"
-                  src={project?.images}
-                />
-              </div>
-            </div>
-          ) : (
-            <></>
-          )}
+          <div className="flex py-2 sm:py-4 h-[16rem] sm:h-[24rem] w-full gap-10  items-center overflow-x-scroll">
+            {project?.images ? (
+              project.images.map((e, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl bg-gray-600 min-w-[600px] w-[90%] sm:w-3/4 p-4 sm:p-10 h-full "
+                >
+                  <img className="h-full mx-auto object-cover" src={e} />
+                </div>
+              ))
+            ) : (
+              <></>
+            )}
+          </div>
 
           <p className="py-4 ">{project?.desc}</p>
           <div className="py-2 flex gap-2">

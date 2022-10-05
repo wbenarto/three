@@ -1,9 +1,19 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { gsap } from "gsap";
+import VoxelDogLoader from "../components/voxel-dog-loader";
+import dynamic from "next/dynamic";
+import useIsomorphicLayoutEffect from "../src/animation/useIsomorphicLayoutEffects";
+import { TransitionContext } from "../src/context/TransitionContext";
+
+const LazyVoxelDog = dynamic(() => import("../components/voxel-dog"), {
+  ssr: false,
+  loading: () => <VoxelDogLoader />,
+});
 
 const Landing = () => {
   const [menu, setMenu] = useState(false);
+  const { timeline } = useContext(TransitionContext);
 
   const boxRef = useRef();
 
@@ -11,9 +21,9 @@ const Landing = () => {
   // useEffect(() => {
   //   gsap.to(boxRef.current, { rotation: "+=360" });
   // });
+  let t1 = gsap.timeline();
 
-  useEffect(() => {
-    let t1 = gsap.timeline();
+  useIsomorphicLayoutEffect(() => {
     t1.fromTo(
       ".landing",
       { opacity: 0, y: 60 },
@@ -34,7 +44,10 @@ const Landing = () => {
       onClick={() => setMenu(!menu)}
       className="w-screen relative h-full  font-roboto font-bold p-4 md:p-10 text-5xl sm:my-auto grid sm:text-7xl  md:text-7xl  "
     >
-      <div className="my-auto relative mx-auto leading-tight  w-full lg:w-[1000px] ">
+      {/* <div className="absolute right-0 my-[50%] z-10 ">
+        <LazyVoxelDog className="" />
+      </div> */}
+      <div className="my-auto relative mx-auto leading-tight  w-full lg:w-[1000px]  ">
         <div className="landing">
           <a
             href="/about"

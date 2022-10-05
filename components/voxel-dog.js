@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { loadGLTFModel } from "../lib/model";
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef, useCallback, useState } from "react";
 import { DogSpinner, DogContainer } from "../components/voxel-dog-loader";
 function easeOutCirc(x) {
   return Math.sqrt(1 - Math.pow(x - 1, 4));
@@ -12,17 +12,22 @@ const Dog = () => {
   const [loading, setLoading] = useState(true);
   const refRenderer = useRef();
 
-  const handleWindowResize = useCallback(() => {
-    const { current: renderer } = refRenderer;
-    const { current: container } = refContainer;
-    if (container && renderer) {
-      const scW = container.clientWidth;
-      const scH = container.clientHeight;
+  // const handleWindowResize = useCallback(() => {
+  //   const { current: renderer } = refRenderer;
+  //   const { current: container } = refContainer;
+  //   if (container && renderer) {
+  //     const scW = container.clientWidth;
+  //     const scH = container.clientHeight;
 
-      renderer.setSize(scW, scH);
-    }
-  }, []);
-
+  //     renderer.setSize(scW, scH);
+  //   }
+  // }, []);
+  // useEffect(() => {
+  //   window.addEventListener("resize", handleWindowResize, false);
+  //   return () => {
+  //     window.removeEventListener("resize", handleWindowResize, false);
+  //   };
+  // }, [handleWindowResize]);
   /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     const { current: container } = refContainer;
@@ -47,12 +52,6 @@ const Dog = () => {
         10,
         20 * Math.cos(0.2 * Math.PI)
       );
-      useEffect(() => {
-        window.addEventListener("resize", handleWindowResize, false);
-        return () => {
-          window.removeEventListener("resize", handleWindowResize, false);
-        };
-      }, [handleWindowResize]);
 
       // 640 -> 240
       // 8   -> 6
@@ -117,7 +116,7 @@ const Dog = () => {
   return (
     <div>
       {" "}
-      <DogContainer className="w-40 h-40 " ref={refContainer}>
+      <DogContainer className="w-40 h-40 bg-red-300 " ref={refContainer}>
         {loading && <DogSpinner />}
       </DogContainer>
     </div>
