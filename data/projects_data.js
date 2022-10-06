@@ -30,7 +30,7 @@ export const projects = [
       "Google Maps API",
       "Sendgrid API",
     ],
-    //images: webesushi,
+    images: ['./celeste.png'],
     github: "https://github.com/wbenarto/celesteCakeShop",
     deployed_url: "http://celeste-cake-shop.vercel.app/",
   },
@@ -50,7 +50,7 @@ export const projects = [
       "Tailwind",
       "Cookies",
     ],
-    //images: webesushi,
+    images: ['./logo.svg'],
   },
   {
     id: "cookma",

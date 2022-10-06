@@ -32,7 +32,7 @@ const Work = () => {
     });
   }, []);
   return (
-    <div className="h-full  text-white bg-black font-roboto max-w-[1200px] mx-auto  ">
+    <div  className="h-full  text-white bg-black font-roboto max-w-[1200px] mx-auto  ">
       <div className="absolute top-0 right-0 mr-10 mt-10 sm:mr-20 md:mr-24 text-2xl hover:cursor-pointer">
         <a
           href="/"
@@ -85,21 +85,6 @@ const Work = () => {
               <FaCaretDown />
             </div>
             <p className="text-gray-400">Web Developer</p>
-          </div>
-        </div>
-        <div className=" w-full grid grid-cols-8 py-2  gap-4 job">
-          <div className="col-span-3 text-gray-400 ">
-            <p>2021 </p>
-          </div>
-          <div className="col-span-5 sm:col-span-4">
-            <div
-              onClick={() => handleClick("cookma")}
-              className="flex justify-between items-center hover:cursor-pointer"
-            >
-              <p>Cookma.co</p>
-              <FaCaretDown />
-            </div>
-            <p className="text-gray-400">Squarespace Consultant</p>
           </div>
         </div>
         <div className=" w-full grid grid-cols-8 py-2  gap-4 job">
@@ -228,7 +213,7 @@ const Work = () => {
               project.images.map((e, i) => (
                 <div
                   key={i}
-                  className="rounded-xl bg-gray-600 min-w-[600px] w-[90%] sm:w-3/4 p-4 sm:p-10 h-full "
+                  className="rounded-xl bg-gray-600  p-4 sm:p-10 h-full "
                 >
                   <img className="h-full mx-auto object-cover" src={e} />
                 </div>
