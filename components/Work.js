@@ -36,11 +36,22 @@ const Work = () => {
       <div className="absolute top-0 right-0 mr-10 mt-10 sm:mr-20 md:mr-24 text-2xl hover:cursor-pointer">
         <a
           href="/"
+          
           className="text-[#13a8bf] hover:after:content-['Home.'] before:content-['WB.'] font-bold"
         ></a>
       </div>
       <div className=" text-base sm:text-xl px-10 md:px-20 pb-40 sm:max-w-[800px] text-left mx-auto ">
         <h1 className="my-10 text-2xl md:text-4xl font-bold title">Work </h1>
+        <div className="hover:animate-bounce my-10">
+          {" "}
+          <a
+            target="_blank" 
+            href="https://drive.google.com/file/d/1DlQAqGGmM8NrIoRMT0EYEmORMW72LidC/view?usp=sharing"
+            className="text-[#13a8bf] hover:cursor-pointer text-xl "
+          >
+            Resume
+          </a>
+        </div>
         <div className=" w-full grid grid-cols-8 py-2  gap-4 job">
           <div className="col-span-3 text-gray-400 ">
             <p>July 2022 - Now</p>

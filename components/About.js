@@ -101,6 +101,7 @@ const about = () => {
         <div className="hover:animate-bounce my-10">
           {" "}
           <a
+            target="_blank" 
             href="https://drive.google.com/file/d/1DlQAqGGmM8NrIoRMT0EYEmORMW72LidC/view?usp=sharing"
             className="text-[#13a8bf] hover:cursor-pointer text-xl "
           >
