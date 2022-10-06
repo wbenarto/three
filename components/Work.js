@@ -219,14 +219,14 @@ const Work = () => {
             <></>
           )}
 
-          <div className="flex py-2 sm:py-4 h-[16rem] sm:h-[24rem] w-full gap-10  items-center overflow-x-scroll">
+          <div className="flex py-2 sm:py-4 h-[16rem] sm:h-[24rem] gap-10 w-auto items-center overflow-x-scroll">
             {project?.images ? (
               project.images.map((e, i) => (
                 <div
                   key={i}
-                  className="rounded-xl bg-gray-600  p-4 sm:p-10 h-full "
+                  className="rounded-xl bg-gray-600 w-auto p-4 sm:p-10 h-full "
                 >
-                  <img className="h-full mx-auto object-cover" src={e} />
+                  <img className="h-full  mx-auto object-cover" src={e} />
                 </div>
               ))
             ) : (

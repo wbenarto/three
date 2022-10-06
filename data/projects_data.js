@@ -138,7 +138,7 @@ export const projects = [
     id: "genjidistrict",
     title: "Genji Sushi",
     headline: "District Manager",
-    images: ["/genji.jpg", "/genji2.jpg"],
+    images: [ "/genji2.jpg"],
     desc: "Assist the Regional Manager with the NCA store takeover (10-15 stores), training new district managers, and setting up operations at Tam Tam Ramen. Helped Mai cuisine acquire new business opportunities such as Market Hall and Munchery. Exceed financial expectations of P & L. Increased sales in delivery stores to 60%-70% comp against last year. Maintained a healthy 5%-10% comp against last year as a district while helping other district with store openings. District Secret Shopper score averaged 97% as of May 2017",
   },
 ];
