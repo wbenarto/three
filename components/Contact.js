@@ -36,7 +36,7 @@ const Contact = () => {
       <div className="absolute top-0 right-0 mr-10 mt-10 sm:mr-20 md:mr-24 text-2xl hover:cursor-pointer">
         <a
           href="/"
-          className="text-[#13a8bf] hover:after:content-['Home.'] before:content-['WB.'] font-bold"
+          className="text-[#13a8bf] hover:after:content-['Home'] before:content-['WB.'] font-bold"
         ></a>
       </div>
       <div className="h-screen text-center grid items-center ">
