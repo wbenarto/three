@@ -43,7 +43,7 @@ const Work = () => {
         <h1 className="my-10 text-2xl md:text-4xl font-bold title">Work </h1>
         <div className=" w-full grid grid-cols-8 py-2  gap-4 job">
           <div className="col-span-3 text-gray-400 ">
-            <p>Sept 2022 - Now</p>
+            <p>Sept 2022 - Dec 2022</p>
           </div>
           <div className="col-span-5  sm:col-span-4">
             <div
