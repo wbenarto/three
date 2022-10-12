@@ -14,9 +14,25 @@
 
 export const projects = [
   {
+    id: "jetsweat",
+    title: "Jetsweat Fitness",
+    headline: "Full-Stack Engineer Intern",
+    desc: "Responsible to implement Frontend components from Figma design to Production. ",
+    tech: [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "React",
+      "Node.js",
+      "Express",
+    ],
+    images: ['./calendar.png'],
+    deployed_url: "http://jetsweatfitness.com/",
+  },
+  {
     id: "celeste",
     title: "Celeste Cake Shop",
-    headline: "eCommerce Developer",
+    headline: "Full-Stack Engineer",
     desc: "A landing site and eCommerce platform created using React on top of Next.js. Sanity.io is utilized for products information and pricing. Allowing users to make a purchase using Stripe API. Built responsive and reusable components using Tailwind.CSS. Also using 3rd party API such as SendGrid to manage email campaign and Google Maps API to show shop location.",
     tech: [
       "HTML",
@@ -37,7 +53,7 @@ export const projects = [
   {
     id: "finca",
     title: "Finca",
-    headline: "Front-end Engineer",
+    headline: "Front-End Engineer",
     desc: "Responsible in building internal tooling dashboard to allow admins to make changes into consultant informations, scheduling, and booking informations. Built the Frontend using Next.js, GraphQL, and Apollo Client. Responsive and reusable components are managed using Tailwind CSS and Styled-Components. Managed authentication and authorization token using cookies. Utilized ApolloClient and GraphQL to manage queries and mutations. ",
     tech: [
       "HTML",

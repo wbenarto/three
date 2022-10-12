@@ -41,7 +41,21 @@ const Work = () => {
       </div>
       <div className="text-base sm:text-xl px-10 md:px-20 pb-40 sm:max-w-[800px] text-left mx-auto ">
         <h1 className="my-10 text-2xl md:text-4xl font-bold title">Work </h1>
-        
+        <div className=" w-full grid grid-cols-8 py-2  gap-4 job">
+          <div className="col-span-3 text-gray-400 ">
+            <p>Sept 2022 - Now</p>
+          </div>
+          <div className="col-span-5  sm:col-span-4">
+            <div
+              onClick={() => handleClick("jetsweat")}
+              className="flex justify-between items-center hover:cursor-pointer"
+            >
+              <p>Jetsweat Fitness</p>
+              <FaCaretDown />
+            </div>
+            <p className="text-gray-400">Full-Stack Engineer Intern</p>
+          </div>
+        </div>
         <div className=" w-full grid grid-cols-8 py-2  gap-4 job">
           <div className="col-span-3 text-gray-400 ">
             <p>July 2022 - Now</p>
@@ -54,7 +68,7 @@ const Work = () => {
               <p>Celeste Cake Shop</p>
               <FaCaretDown />
             </div>
-            <p className="text-gray-400">eCommerce Engineer</p>
+            <p className="text-gray-400">Full-Stack Engineer</p>
           </div>
         </div>
         <div className=" w-full grid grid-cols-8 py-2  gap-4 job">
@@ -70,7 +84,7 @@ const Work = () => {
               <FaCaretDown />
             </div>
 
-            <p className="text-gray-400">Frontend Engineer</p>
+            <p className="text-gray-400">Front-End Engineer</p>
           </div>
         </div>
         <div className=" w-full grid grid-cols-8 py-2  gap-4 job">
@@ -228,7 +242,8 @@ const Work = () => {
           <div className="py-2 flex gap-2">
             {project?.deployed_url ? (
               <button className="py-2 px-10 bg-gray-600 rounded-lg">
-                <a href={project?.deployed_url}>Visit</a>
+                <a href={project?.deployed_url}
+                target='__blank'>Visit</a>
               </button>
             ) : (
               <></>

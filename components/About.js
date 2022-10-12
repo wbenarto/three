@@ -18,7 +18,7 @@ const about = () => {
         scrollTrigger: {
           id: `section-${i + 1}`,
           trigger: e,
-          start: "top 60%",
+          start: "top 80%",
           end: "bottom 40% ",
           toggleActions: "play none none reverse",
           // markers: true,
