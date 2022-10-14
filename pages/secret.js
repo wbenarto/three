@@ -9,7 +9,7 @@ const ThreeComponent = dynamic(() => import('../components/Three'), {
 
 const Secret = () => {
   return (
-    <div className='w-full h-screen bg-red-200'>
+    <div className='w-full h-screen'>
       <Head>
         <title>Secret Page</title>
       </Head>

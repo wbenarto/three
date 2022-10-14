@@ -106,13 +106,9 @@ const Three = () => {
   }, [renderer, handleWindowResize]);
 
   return (
-    <div className='relative w-screen h-screen   '>
-      <div className='absolute top-[5rem] left-0 w-full '>
-        <h1>
-          <span>Secret Page</span> 
-        </h1>
-      </div>
-      <div className='absolute inset-0 h-full w-full bg-transparent' ref={refBody}>{loading && <p>loading...</p>}</div>
+    <div className='relative w-screen h-screen  bg-blue-200 '>
+    
+      <div className='absolute inset-0 h-40 w-40 bg-transparent' ref={refBody}>{loading && <p>loading...</p>}</div>
       <div className='absolute bottom-[5rem] w-full'>
         -- Created by <a>Webe</a> ❤️ --
       </div>
