@@ -28,7 +28,21 @@ module.exports = {
       chakra: ["Chakra Petch", "SFMono-Regular"],
       roboto: ["roboto"],
     },
-    extend: {},
+    extend: {
+      animation: {
+        'gradient': {
+          '0%' : {
+            backgroundPosition: '0% 50%'
+          },
+          '50%' : {
+            backgroundPosition: '100% 50%'
+          },
+          '100%' : {
+            backgroundPosition: '0% 50%'
+          }
+        }
+      }
+    },
   },
   fontWeight: {
     hairline: 100,

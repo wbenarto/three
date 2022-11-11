@@ -30,6 +30,26 @@ a {
 * {
   box-sizing: border-box;
 }
+
+#main {
+  background: linear-gradient(-45deg,#ba6f47, #432371, #6e4453, #abc9e9 );
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 /* 
 .two {
     transform:scale(1);
