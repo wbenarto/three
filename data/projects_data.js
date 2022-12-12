@@ -16,8 +16,8 @@ export const projects = [
   {
     id: "jetsweat",
     title: "Jetsweat Fitness",
-    headline: "Full-Stack Engineer Intern",
-    desc: "Responsible to implement Frontend components from Figma design to Production. ",
+    headline: "Software Engineer Intern",
+    desc: " Collaborate within an Agile team structure and developed reusable and responsive Frontend components using HTML, CSS, React.js and Redux. Modify exsisting components to meet UI/UX design standards and ensure responsiveness for all devices. Utilize CSS preprocessing tools such as SASS for CSS development. Responsible in configuring ACM (AWS Certificate Manager) and AWS CloudFront to allow studios’ whitelabel domain to serve JetSweat streaming platform. Manage backend server in Sails.js using MVC framework in REST API and database in MySQL.",
     tech: [
       "HTML",
       "CSS",

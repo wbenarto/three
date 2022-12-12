@@ -45,7 +45,7 @@ const about = () => {
       </div>
       <div ref={addToRefs} className=" h-screen text-center grid items-center ">
         <h1 className="text-2xl md:text-4xl font-bold p-4 sm:p-14 ">
-          I design and build Front-End web applications using modern JavaScript
+          I design and build Full-Stack web applications using modern JavaScript
           frameworks
         </h1>
       </div>
@@ -68,6 +68,16 @@ const about = () => {
           create positive impact for other people and for the world through my
           code.
         </p>
+        <br />
+        <p  ref={addToRefs} className="text-xl text-gray-400 ">
+          My programming journey started in 2018 where I took my first coding class at UC Berkeley Ext program where I learned how to create Full-Stack web applications using MongoDB, Node.js, React, and Express.
+          I completed the 6-month coding bootcamp with the foundation that helps me acquire contract work and freelance jobs. 
+        </p>
+        <br />
+        <p  ref={addToRefs} className="text-xl text-gray-400 ">
+          Prior to my current role as Software Engineer, I had worked 9 years of my professional career in Food and Beverage industry. I started off as sushi chef and by the end of my journey with Genji, I was the Regional Operations Manager for California Region. I thoroughly enjoyed my experience with Genji Family and I am so thankful for the experience working with the company. 
+        </p>
+
         <div  ref={addToRefs} className="hover:animate-bounce my-10">
           {" "}
           <a
@@ -94,17 +104,17 @@ const about = () => {
               <p>Frameworks:</p>
             </div>
             <div className="col-span-4">
-              <p>Next.js, React.js</p>
+              <p>Next.js, React.js, Redux, Recoil, jQuery, Ajax</p>
             </div>
           </div>
           <div ref={addToRefs} className="w-full grid grid-cols-6 py-2  gap-4 ">
             <div className="col-span-2 text-gray-400 ">
-              <p>Libraries:</p>
+              <p>Backend:</p>
             </div>
             <div className="col-span-4">
               <p>
                 {" "}
-                Node.js, Express, Redux, Recoil, REST API, GraphQL API,
+                Node.js, Express, Sails.js,  REST API, GraphQL API,
                 ApolloClient
               </p>
             </div>
