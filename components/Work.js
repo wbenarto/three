@@ -63,7 +63,7 @@ const Work = () => {
               <p>Jetsweat Fitness</p>
               <FaCaretDown />
             </div>
-            <p className="text-gray-400">Software Engineer Intern</p>
+            <p className="text-gray-400">Software Engineer</p>
           </div>
         </div>
         <div className=" w-full grid grid-cols-8 py-2  gap-4 job">
@@ -233,20 +233,21 @@ const Work = () => {
             <></>
           )}
 
-          <div className="flex py-2 sm:py-4 h-[16rem] sm:h-[24rem] gap-10 w-auto items-center overflow-x-scroll">
-            {project?.images ? (
-              project.images.map((e, i) => (
+          {project?.images ? (
+            project.images.map((e, i) => (
+              <div className="flex py-2 sm:py-4 h-[16rem] sm:h-[24rem] gap-10 w-auto items-center overflow-x-scroll">
                 <div
                   key={i}
                   className="rounded-xl bg-gray-600  w-full p-4 sm:p-10 h-full "
                 >
                   <img className="h-full  mx-auto object-cover" src={e} />
                 </div>
-              ))
-            ) : (
-              <></>
-            )}
-          </div>
+              </div>
+            ))
+          ) : (
+            <></>
+          )}
+          
 
           <p className="py-4 ">{project?.desc}</p>
           <div className="py-2 flex gap-2">
