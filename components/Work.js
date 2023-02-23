@@ -53,7 +53,7 @@ const Work = () => {
         </div>
         <div className=" w-full grid grid-cols-8 py-2  gap-4 job">
           <div className="col-span-3 text-gray-400 ">
-            <p>Sept 2022 - Now</p>
+            <p>Sept 2022 - Current</p>
           </div>
           <div className="col-span-5  sm:col-span-4">
             <div
@@ -68,7 +68,7 @@ const Work = () => {
         </div>
         <div className=" w-full grid grid-cols-8 py-2  gap-4 job">
           <div className="col-span-3 text-gray-400 ">
-            <p>July 2022 - Now</p>
+            <p>July 2022 - Current</p>
           </div>
           <div className="col-span-5  sm:col-span-4">
             <div
