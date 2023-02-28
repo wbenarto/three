@@ -26,7 +26,7 @@ export const projects = [
       "Node.js",
       "Express",
     ],
-    images: ['./calendar.png'],
+    images: [],
     deployed_url: "http://jetsweatfitness.com/",
   },
   {
