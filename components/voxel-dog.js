@@ -116,7 +116,7 @@ const Dog = () => {
   return (
     <div className=''>
       {" "}
-      <DogContainer className="w-full h-full" ref={refContainer}>
+      <DogContainer className="" ref={refContainer}>
         {loading && <DogSpinner />}
       </DogContainer>
     </div>

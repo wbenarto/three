@@ -7,7 +7,7 @@ export const DogSpinner = () => (
 );
 
 export const DogContainer = forwardRef(({ children }, ref) => (
-  <div ref={ref} className=" w-screen h-screen">
+  <div ref={ref} className=" w-screen h-screen ">
     {children}
   </div>
 ));
