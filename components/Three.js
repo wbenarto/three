@@ -19,9 +19,10 @@ const Three = () => {
   const handleWindowResize = useCallback(() => {
     const { current: container } = refBody;
     if (container && renderer) {
+      
       const scW = container.clientWidth;
       const scH = container.clientHeight;
-
+      console.log(scW, scH)
       renderer.setSize(scW, scH);
     }
   }, [renderer]);
@@ -46,7 +47,7 @@ const Three = () => {
       container.appendChild(renderer.domElement);
       setRenderer(renderer);
 
-      const scale = scH * 0.08 + 4;
+      const scale = scH * 0.008 + 4;
       const camera = new THREE.OrthographicCamera(-scale, scale, scale, -scale / 2, 0.01, 50000);
       camera.position.copy(initialCameraPosition);
       camera.lookAt(target);
@@ -108,8 +109,8 @@ const Three = () => {
   return (
     <div className='relative w-screen h-screen  bg-blue-200 '>
     
-      <div className='absolute inset-0 h-40 w-40 bg-transparent' ref={refBody}>{loading && <p>loading...</p>}</div>
-      <div className='absolute bottom-[5rem] w-full'>
+      <div className='absolute inset-0 h-full w-full bg-transparent' ref={refBody}>{loading && <p>loading...</p>}</div>
+      <div className='absolute bottom-[5rem] w-screen bg-red-200'>
         -- Created by <a>Webe</a> ❤️ --
       </div>
     </div>

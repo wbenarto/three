@@ -32,7 +32,7 @@ a {
 }
 
 #main {
-  background: linear-gradient(-45deg,#abb8c7,#434b59 , #2a292e, #abc9e9 );
+  background: linear-gradient(-20deg,#070c12,#121822 , #1a4157fa, #416184 );
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
 	height: 100vh;

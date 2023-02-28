@@ -12,22 +12,22 @@ const Dog = () => {
   const [loading, setLoading] = useState(true);
   const refRenderer = useRef();
 
-  // const handleWindowResize = useCallback(() => {
-  //   const { current: renderer } = refRenderer;
-  //   const { current: container } = refContainer;
-  //   if (container && renderer) {
-  //     const scW = container.clientWidth;
-  //     const scH = container.clientHeight;
+  const handleWindowResize = useCallback(() => {
+    const { current: renderer } = refRenderer;
+    const { current: container } = refContainer;
+    if (container && renderer) {
+      const scW = container.clientWidth;
+      const scH = container.clientHeight;
 
-  //     renderer.setSize(scW, scH);
-  //   }
-  // }, []);
-  // useEffect(() => {
-  //   window.addEventListener("resize", handleWindowResize, false);
-  //   return () => {
-  //     window.removeEventListener("resize", handleWindowResize, false);
-  //   };
-  // }, [handleWindowResize]);
+      renderer.setSize(scW, scH);
+    }
+  }, []);
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowResize, false);
+    return () => {
+      window.removeEventListener("resize", handleWindowResize, false);
+    };
+  }, [handleWindowResize]);
   /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     const { current: container } = refContainer;

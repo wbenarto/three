@@ -44,9 +44,9 @@ const Landing = () => {
       onClick={() => setMenu(!menu)}
       className="w-screen relative h-full  font-roboto font-bold p-4 md:p-10 text-5xl sm:my-auto grid sm:text-7xl  md:text-7xl  "
     >
-      {/* <div className="absolute right-0 my-[50%] z-10 ">
+      <div className="absolute ">
         <LazyVoxelDog className="" />
-      </div> */}
+      </div>
       <div className="my-auto relative mx-auto leading-tight  w-full lg:w-[1000px]  ">
         <div className="landing">
           <a
