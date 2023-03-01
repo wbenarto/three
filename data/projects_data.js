@@ -16,7 +16,7 @@ export const projects = [
   {
     id: "jetsweat",
     title: "Jetsweat Fitness",
-    headline: "Software Engineer",
+    headline: "Full-Stack Engineer",
     desc: " Collaborate within an Agile team structure and developed reusable and responsive Frontend components using HTML, CSS, React.js and Redux. Modify exsisting components to meet UI/UX design standards and ensure responsiveness for all devices. Utilize CSS preprocessing tools such as SASS for CSS development. Responsible in configuring ACM (AWS Certificate Manager) and AWS CloudFront to allow studios’ whitelabel domain to serve JetSweat streaming platform. Manage backend server in Sails.js using MVC framework in REST API and database in MySQL.",
     tech: [
       "HTML",
@@ -48,7 +48,7 @@ export const projects = [
     ],
     images: ['./celeste.png'],
     github: "https://github.com/wbenarto/celesteCakeShop",
-    deployed_url: "http://celeste-cake-shop.vercel.app/",
+    deployed_url: "https://www.celestecakeshop.com/",
   },
   {
     id: "finca",
