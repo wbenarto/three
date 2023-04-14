@@ -114,7 +114,7 @@ const Dog = () => {
     }
   }, []);
   return (
-    <div className='md:max-w-[60%] mx-auto'>
+    <div className='md:max-w-[50%] mx-24'>
       {" "}
       <DogContainer className="" ref={refContainer}>
         {loading && <DogSpinner />}
