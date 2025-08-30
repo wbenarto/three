@@ -26,15 +26,15 @@ const Pinterest = () => {
         {id: 17, title: "Pin 17", height: '240', img_url: 'http://placehold.it/150x240.jpg'},
         {id: 18, title: "Pin 18", height: '120', img_url: 'http://placehold.it/150x120.jpg'}
       ];
-    const numColumns = 5
-    const columns = useMemo(()=>{
-        const cols = Array.from({length: numColumns}, ()=> ({items: [], height: 0}))
+      const numColumns = 5
+      const columns = useMemo(()=>{
+        const cols = Array.from({length: numColumns}, ()=>({items:[], height: 0}))
 
         for (const pin of PINS) {
             let minHeight = Infinity;
             let minIndex = 0;
 
-            for (let i=0; i<numColumns;i++) {
+            for (let i=0;i<numColumns;i++) {
                 if (cols[i].height < minHeight) {
                     minHeight = cols[i].height
                     minIndex = i
@@ -42,27 +42,24 @@ const Pinterest = () => {
             }
             cols[minIndex].items.push(pin)
             cols[minIndex].height += Number(pin.height)
-
         }
 
-        return cols.map(col=>col.items)
-    }, [PINS, numColumns])
-    
-  return (
-  <div className='w-screen h-screen bg-blue-200 p-10  '>
-    <div className='flex gap-4 h-full'>
-    {columns.map((col,idx) => (
-        <div className='flex-1 gap-4 flex flex-col bg-red-100'>
-            {col.map(e=> (
-                <Card {...e} />
-            ))}
-        </div>
-    ))}
-    
+        return cols.map(e=>e.items)
+      }, [PINS, numColumns])
+   
 
+
+  return (
+  <div className='w-screen h-screen bg-blue-200 p-10'>
+    <div className='flex gap-4 p-2 '>
+        {columns.map((col,idx) => (
+            <div className='flex flex-1 flex-col gap-4'>
+                {col.map(e=> (
+                    <Card {...e}/>
+                ))}
+            </div>    
+        ))}
     </div>
-    
-  
   </div>)
 };
 
